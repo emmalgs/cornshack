@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form";
+import AddCornForm from "./AddCornForm";
 
 class CornControl extends React.Component {
 
@@ -29,9 +29,8 @@ class CornControl extends React.Component {
     let currentlyVisibleSate = null;
 
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleSate = <Form 
-        formSubmissionHandler={this.handleAddingCorn} 
-        buttonText={"Add New Corn"}
+      currentlyVisibleSate = <AddCornForm 
+        onCornCreation={this.handleAddingCorn} 
       />
     }
 

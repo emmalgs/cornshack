@@ -29,3 +29,5 @@ function AddCornForm(props) {
 AddCornForm.propTypes = {
   onCornCreation: PropTypes.func
 };
+
+export default AddCornForm;

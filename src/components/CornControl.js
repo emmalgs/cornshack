@@ -3,7 +3,7 @@ import AddCornForm from "./AddCornForm";
 import CornList from "./CornList";
 import CornDetail from "./CornDetail";
 import EditCornForm from "./EditCornForm";
-import { editableInputTypes } from "@testing-library/user-event/dist/utils";
+import Header from "./Header";
 
 class CornControl extends React.Component {
   constructor(props) {
@@ -12,7 +12,8 @@ class CornControl extends React.Component {
       cornList: someCorn,
       formVisibleOnPage: false,
       editing: false,
-      selectedCorn: null
+      selectedCorn: null,
+      cornWallet: 0
     };
   }
 
@@ -45,10 +46,14 @@ class CornControl extends React.Component {
   }
 
   handleCornSale = (id) => {
+    console.log(this.state.cornWallet)
     const selectedCorn = this.state.cornList.filter(corn => corn.id === id);
     if (selectedCorn[0].ears > 0) {
       selectedCorn[0].ears -= 1;
-      this.setState({selectedCorn: selectedCorn[0]});
+      let updateWallet = this.state.cornWallet + selectedCorn[0].price;
+      this.setState({
+        selectedCorn: selectedCorn[0],
+        cornWallet: updateWallet});
     }
   }
 
@@ -63,7 +68,7 @@ class CornControl extends React.Component {
     this.setState({
       cornList: editCornList,
       editing: false,
-      selectedTicket: null
+      selectedCorn: null
     });
   }
 
@@ -74,9 +79,9 @@ class CornControl extends React.Component {
     if (this.state.editing) {
       currentlyVisibleSate = <EditCornForm
         corn = {this.state.selectedCorn}
-        onEditCorn={this.handleCornEdit}
-        buttonText="Return to All Corn" />
-    } else if (this.state.formVisibleOnPage) {
+        onEditCorn={this.handleCornEdit} />
+        buttonText="Return to All Corn" 
+      } else if (this.state.formVisibleOnPage) {
       currentlyVisibleSate = <AddCornForm 
         onCornCreation={this.handleAddingCorn} 
       />
@@ -91,14 +96,17 @@ class CornControl extends React.Component {
       currentlyVisibleSate = <CornList
         cornList={this.state.cornList}
         onCornSelection={this.handleCornSelection} />
-        buttonText="Add New Corn"
+        buttonText="Add Bushel of Corn"
     }
 
     return (
-      <div>
-        {currentlyVisibleSate}
-        <button onClick={this.handleViewClick}>{buttonText}</button>
-      </div>
+      <React.Fragment>
+        <Header cornSales={this.state.cornWallet} />
+        <div>
+          {currentlyVisibleSate}
+          <button onClick={this.handleViewClick}>{buttonText}</button>
+        </div>
+      </React.Fragment>
     )
   }
 }

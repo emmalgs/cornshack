@@ -20,7 +20,7 @@ function AddCornForm(props) {
     <div>
       <Form
         formSubmissionHandler={handleNewCornSubmission}
-        buttonText="Add New Corn" />
+        buttonText="Add Bushel" />
     </div>
   );
 }

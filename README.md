@@ -2,7 +2,7 @@
 
 ### by Emma Gerigscott
 
-<!-- ![gif of app in motion](./src/img/example.gif) -->
+![gif of app in motion](./src/img/example.gif)
 
 ## Description
 
@@ -20,12 +20,13 @@ Bingo's Cornshack is a popular locale to purchase ears of corn, add bushels of c
 
 ## Setup Instructions
 1. Clone this repo to your desktop
-2. Open your terminal (e.g. Terminal of Gitbash) and navigate to this project's directory, "punch-scrunch-designs".
+2. Open your terminal (e.g. Terminal of Gitbash) and navigate to this project's directory, "cornshack".
 3. Run ```npm install``` in the project's root directory to install necessary dependencies.
-4. Run ```npm start``` in the project's root directory to start the app 
+4. Run ```npm start``` in the project's root directory to start the app in your browser 
 
 ## Known Bugs 
-* None
+* _Cannot delete corn_
+* _Can't do anything with your corn wallet_
 
 # License
 

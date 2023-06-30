@@ -1,6 +1,7 @@
 import React from "react";
 import AddCornForm from "./AddCornForm";
 import CornList from "./CornList";
+import CornDetail from "./CornDetail";
 
 class CornControl extends React.Component {
 
@@ -14,6 +15,12 @@ class CornControl extends React.Component {
   }
 
   handleViewClick = () => {
+    if (this.state.selectedCorn != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedCorn: null,
+      });
+    } else {
     this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage
     }));
@@ -41,6 +48,10 @@ class CornControl extends React.Component {
         onCornCreation={this.handleAddingCorn} 
       />
       buttonText="Return to All Corn"
+    } else if (this.state.selectedCorn != null) {
+      currentlyVisibleSate = <CornDetail
+        corn = {this.state.selectedCorn} />
+        buttonText="Return to All Corn"
     } else {
       currentlyVisibleSate = <CornList
         cornList={this.state.cornList}

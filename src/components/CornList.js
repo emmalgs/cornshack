@@ -23,3 +23,5 @@ CornList.propTypes = {
   cornList: PropTypes.array,
   onCornSelection: PropTypes.func
 }
+
+export default CornList;

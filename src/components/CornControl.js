@@ -3,14 +3,15 @@ import AddCornForm from "./AddCornForm";
 import CornList from "./CornList";
 import CornDetail from "./CornDetail";
 import EditCornForm from "./EditCornForm";
+import { editableInputTypes } from "@testing-library/user-event/dist/utils";
 
 class CornControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       cornList: someCorn,
       formVisibleOnPage: false,
+      editing: false,
       selectedCorn: null
     };
   }
@@ -20,6 +21,7 @@ class CornControl extends React.Component {
       this.setState({
         formVisibleOnPage: false,
         selectedCorn: null,
+        editing: false
       });
     } else {
     this.setState(prevState => ({
@@ -32,7 +34,8 @@ class CornControl extends React.Component {
     const newCornList = this.state.cornList.concat(newCorn);
     this.setState({
       cornList: newCornList,
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      editing: false
     });
   }
 
@@ -49,11 +52,18 @@ class CornControl extends React.Component {
     }
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true})
+  }
+
   handleCornEdit = (cornUpdate) => {
-    const newCornList = this.state.cornList.concat(cornUpdate);
+    const editCornList = this.state.cornList
+      .filter(corn => corn.id !== this.state.selectedCorn.id)
+      .concat(cornUpdate);
     this.setState({
-      cornList: newCornList,
-      formVisibleOnPage: false
+      cornList: editCornList,
+      editing: false,
+      selectedTicket: null
     });
   }
 
@@ -61,7 +71,12 @@ class CornControl extends React.Component {
     let currentlyVisibleSate = null;
     let buttonText = null;
 
-    if (this.state.formVisibleOnPage) {
+    if (this.state.editing) {
+      currentlyVisibleSate = <EditCornForm
+        corn = {this.state.selectedCorn}
+        onEditCorn={this.handleCornEdit}
+        buttonText="Return to All Corn" />
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleSate = <AddCornForm 
         onCornCreation={this.handleAddingCorn} 
       />
@@ -70,7 +85,7 @@ class CornControl extends React.Component {
       currentlyVisibleSate = <CornDetail
         corn = {this.state.selectedCorn}
         sellCorn={this.handleCornSale}
-        onClickingEdit={this.handleCornEdit} />
+        onClickingEdit={this.handleEditClick} />
         buttonText="Return to All Corn"
     } else {
       currentlyVisibleSate = <CornList

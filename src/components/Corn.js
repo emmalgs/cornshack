@@ -13,7 +13,7 @@ function Corn(props) {
     }
   return (
     <div>
-      <div onClick = {() => props.whenCornClicked(props.id)}>
+      <div key={props.id} onClick = {() => props.whenCornClicked(props.id)}>
         <h4>{props.name}</h4>
         <p>Origin: {props.origin}</p>
         <p>${props.price}</p>

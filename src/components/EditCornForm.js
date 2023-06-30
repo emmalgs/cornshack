@@ -6,11 +6,17 @@ function EditCornForm (props) {
 
   function handleEditCornSubmission(event) {
     event.preventDefault();
+    let earValue = null;
+    if (event.target.restock.checked) {
+      earValue = event.target.restock.value
+    } else {
+      earValue = props.corn.ears
+    }
     props.onEditCorn({
       name: event.target.name.value,
       origin: event.target.origin.value,
       price: parseInt(event.target.price.value),
-      ears: event.target.restock.value,
+      ears: earValue,
       id: props.corn.id
     })
   }
@@ -23,4 +29,9 @@ function EditCornForm (props) {
   )
 }
 
-export default EditTicketFrom;
+EditCornForm.propTypes = {
+  corn: PropTypes.object,
+  onEditCorn: PropTypes.func
+}
+
+export default EditCornForm;

@@ -4,6 +4,7 @@ import CornList from "./CornList";
 import CornDetail from "./CornDetail";
 import EditCornForm from "./EditCornForm";
 import Header from "./Header";
+import cornFacts from "./cornfacts";
 
 class CornControl extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class CornControl extends React.Component {
       cornList: someCorn,
       formVisibleOnPage: false,
       editing: false,
+      cornFact: false,
       selectedCorn: null,
       cornWallet: 0
     };
@@ -72,6 +74,12 @@ class CornControl extends React.Component {
     });
   }
 
+  handleCornFacts = () => {
+    this.setState(prevState => ({
+      cornFact: !prevState.cornFact
+      }));
+  }
+
   render(){
     let currentlyVisibleSate = null;
     let buttonText = null;
@@ -97,6 +105,11 @@ class CornControl extends React.Component {
         cornList={this.state.cornList}
         onCornSelection={this.handleCornSelection} />
         buttonText="Add Bushel of Corn"
+    }
+
+    let visibleCornFacts = null;
+    if (this.state.cornFact) {
+      visibleCornFacts = <div className="corn-facts"></div>
     }
 
     return (

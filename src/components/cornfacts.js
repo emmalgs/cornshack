@@ -1,0 +1,5 @@
+const cornFacts = [
+  "Corn was first domesticated by native peoples in southern Mexico about 10,000 years ago.", "The average ear of corn has 800 kernels in 16 rows.", "Only 1% of corn planted in the United States is sweet corn.", "Corn cobs always have an even number of rows.", "The types of corn grown in America are dent corn, flint corn, pod corn, popcorn, flour corn, and sweet corn.", "The world record for the tallest corn stalk is more than 35 feet.", "An ear of corn has one silk stand for every kernel.", "Each corn plant produces one to three cobs each.", "More than 90 million acres on earth are dedicated to producing corn.", "Usually corn is yellow, but it can also come in colors such as green, red, or white.", "While many consider corn a vegetable, it's actually both a grain and a fruit.", "A bushel of corn can sweeten 400 cans of soda", "Maize is a Taino word that means 'sacred mother' or 'giver of life'.", " THE WORLD RECORD FOR A CORN PLANT HEIGHT IS OVER 48 FEET"
+]
+
+export default cornFacts;

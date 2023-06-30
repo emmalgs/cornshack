@@ -3,9 +3,9 @@ import CornControl from './CornControl';
 
 function App() {
   return (
-    <div className='main'>
-      <CornControl />
-    </div>
+      <div className='main'>
+        <CornControl />
+      </div>
   )
 }
 

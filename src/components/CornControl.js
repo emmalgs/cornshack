@@ -2,6 +2,7 @@ import React from "react";
 import AddCornForm from "./AddCornForm";
 import CornList from "./CornList";
 import CornDetail from "./CornDetail";
+import EditCornForm from "./EditCornForm";
 
 class CornControl extends React.Component {
 
@@ -48,6 +49,14 @@ class CornControl extends React.Component {
     }
   }
 
+  handleCornEdit = (cornUpdate) => {
+    const newCornList = this.state.cornList.concat(cornUpdate);
+    this.setState({
+      cornList: newCornList,
+      formVisibleOnPage: false
+    });
+  }
+
   render(){
     let currentlyVisibleSate = null;
     let buttonText = null;
@@ -60,7 +69,8 @@ class CornControl extends React.Component {
     } else if (this.state.selectedCorn != null) {
       currentlyVisibleSate = <CornDetail
         corn = {this.state.selectedCorn}
-        sellCorn={this.handleCornSale} />
+        sellCorn={this.handleCornSale}
+        onClickingEdit={this.handleCornEdit} />
         buttonText="Return to All Corn"
     } else {
       currentlyVisibleSate = <CornList

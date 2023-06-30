@@ -21,12 +21,14 @@ function CornDetail(props){
         <li>Price: ${props.corn.price}</li>
         <li>{earInformation}</li>
       </ul>
+      <button onClick={props.onClickingEdit}>Edit</button>
     </div>
   );
 }
 
 CornDetail.propTypes = {
-  corn: PropTypes.object
+  corn: PropTypes.object,
+  onClickingEdit: PropTypes.func
 }
 
 export default CornDetail;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&family=Shrikhand&family=Special+Elite&display=swap');
+
 :root {
   --brown: #43281C;
   --yellow1: #F4D35E;
@@ -12,38 +14,81 @@ body {
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin: 20px;
   padding: 20px;
+  border: 2px solid var(--brown);
+  padding-bottom: 50px;
 }
 
 .header {
   text-align: center;
+  font-family: "Shrikhand";
+}
+
+.header h1 {
+  font-size: 80px;
+  margin: 0;
 }
 
 .control {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
   width: 80%;
-  height: 50vh;
+}
+
+.nav-btn {
+  align-self: baseline;
+  justify-self: center;
+  font-size: 20px;
+  border: 2px solid var(--brown);
+  background: none;
+  padding: 10px;
+  font-family: "Shrikhand"
+}
+
+.nav-btn:hover {
+  cursor: pointer;
+  background-color: var(--yellow1);
+}
+
+.corn-list {
+  flex-grow: 2;
 }
 
 .cornCard {
   background-image: url('./../img/corncob.png');
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100px;
+  /* height: 100px; */
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
   padding-left: 60px;
+  margin: 20px;
+  font-family: "Special Elite"
+}
+
+.cornCard:hover {
+  background-image: url('./../img/corncob2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .cornCard p {
-  padding: 0;
   margin: 0px;
 }
+
+.cornCard h4 {
+  margin: 2px;
+}
+
 
 
 @keyframes App-logo-spin {

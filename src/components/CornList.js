@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function CornList(props){
   return (
-    <div>
+    <div className="corn-list">
       {props.cornList.map((corn) =>
       <Corn
         whenCornClicked = {props.onCornSelection}

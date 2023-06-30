@@ -11,7 +11,7 @@ function CornList(props){
         name={corn.name}
         origin={corn.origin}
         price={corn.price}
-        bushels={corn.bushels}
+        ears={corn.ears}
         id={corn.id}
         key={corn.id} />
         )}

@@ -11,8 +11,7 @@ function AddCornForm(props) {
       name: event.target.name.value,
       origin: event.target.origin.value,
       price: event.target.price.value,
-      bushels: event.target.bushels.value,
-      ears: event.target.bushels.value * 112,
+      ears: 112,
       id: v4()
     });
   }

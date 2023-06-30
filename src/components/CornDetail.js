@@ -8,8 +8,7 @@ function CornDetail(props){
       <ul>
         <li>Origin: {props.corn.origin}</li>
         <li>Price: ${props.corn.price}</li>
-        <li>Bushels in Stock: {props.corn.bushels}</li>
-        <li>Ears available: {props.corn.ears}</li>
+        <li>Ears available: {props.corn.ears} <button onClick={() => props.sellCorn(props.corn.id)}>Sell Corn</button></li>
       </ul>
     </div>
   );

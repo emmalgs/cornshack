@@ -8,7 +8,7 @@ class CornControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cornList: [],
+      cornList: someCorn,
       formVisibleOnPage: false,
       selectedCorn: null
     };
@@ -37,7 +37,15 @@ class CornControl extends React.Component {
 
   handleCornSelection = (id) => {
     const selectedCorn = this.state.cornList.filter(corn => corn.id === id);
-    this.setState({selectedCorn: selectedCorn});
+    this.setState({selectedCorn: selectedCorn[0]});
+  }
+
+  handleCornSale = (id) => {
+    const selectedCorn = this.state.cornList.filter(corn => corn.id === id);
+    if (selectedCorn[0].ears > 0) {
+      selectedCorn[0].ears -= 1;
+      this.setState({selectedCorn: selectedCorn[0]});
+    }
   }
 
   render(){
@@ -51,7 +59,8 @@ class CornControl extends React.Component {
       buttonText="Return to All Corn"
     } else if (this.state.selectedCorn != null) {
       currentlyVisibleSate = <CornDetail
-        corn = {this.state.selectedCorn} />
+        corn = {this.state.selectedCorn}
+        sellCorn={this.handleCornSale} />
         buttonText="Return to All Corn"
     } else {
       currentlyVisibleSate = <CornList
@@ -70,3 +79,34 @@ class CornControl extends React.Component {
 }
 
 export default CornControl;
+
+const someCorn = [
+  {
+    name: "Golden Shafts of Glory",
+    origin: "Indiana",
+    price: 5.55,
+    ears: 112,
+    id: "great"
+  },
+  {
+    name: "Creamed Corn of the Gods",
+    origin: "Peru",
+    price: 8.99,
+    ears: 112,
+    id: "cool"
+  },
+  {
+    name: "Rainbow Nuggets",
+    origin: "Guatemala",
+    price: 7.32,
+    ears: 112,
+    id: "awesome"
+  },
+  {
+    name: "Popping Ploppers",
+    origin: "Illinois",
+    price: 2.05,
+    ears: 112,
+    id: "scrunch"
+  }
+]

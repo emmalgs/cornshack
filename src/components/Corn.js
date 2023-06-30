@@ -8,7 +8,7 @@ function Corn(props) {
         <h4>{props.name}</h4>
         <p>Origin: {props.origin}</p>
         <p>${props.price}</p>
-        <p>Bushels in Stock: {props.bushels}</p>
+        <p>Ears in Stock: {props.ears}</p>
       </div>
     </div>
   );
@@ -17,8 +17,7 @@ function Corn(props) {
 Corn.propTypes = {
   name: PropTypes.string,
   origin: PropTypes.string,
-  price: PropTypes.string,
-  bushels: PropTypes.number,
+  price: PropTypes.number,
   id: PropTypes.string,
   whenCornClicked: PropTypes.func
 };

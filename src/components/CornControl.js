@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "./Form";
 
 class CornControl extends React.Component {
 
@@ -20,7 +21,7 @@ class CornControl extends React.Component {
     let currentlyVisibleSate = null;
 
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleSate = <CornForm />
+      currentlyVisibleSate = <Form />
     }
 
     return (

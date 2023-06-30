@@ -23,7 +23,8 @@ class CornControl extends React.Component {
     } else {
     this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+      }));
+    }
   }
 
   handleAddingCorn = (newCorn) => {

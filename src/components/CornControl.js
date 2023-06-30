@@ -102,7 +102,7 @@ class CornControl extends React.Component {
     return (
       <React.Fragment>
         <Header cornSales={this.state.cornWallet} />
-        <div>
+        <div className="control">
           {currentlyVisibleSate}
           <button onClick={this.handleViewClick}>{buttonText}</button>
         </div>

@@ -3,7 +3,7 @@ import CornControl from './CornControl';
 
 function App() {
   return (
-    <div>
+    <div className='main'>
       <CornControl />
     </div>
   )

@@ -1,3 +1,14 @@
+:root {
+  --brown: #43281C;
+  --yellow1: #F4D35E;
+  --yellow2: #fff9c7;
+  --yellow3: #f7ef02;
+}
+
+body {
+  background-color: var(--yellow2);
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -18,8 +29,20 @@
 }
 
 .cornCard {
-  background-color: gold;
-  width: 300px;
+  background-image: url('./../img/corncob.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.cornCard p {
+  padding: 0;
+  margin: 0px;
 }
 
 

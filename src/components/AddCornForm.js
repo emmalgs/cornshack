@@ -10,8 +10,8 @@ function AddCornForm(props) {
     props.onCornCreation({
       name: event.target.name.value,
       origin: event.target.origin.value,
-      price: event.target.price.value,
-      ears: 112,
+      price: parseInt(event.target.price.value),
+      ears: event.target.restock.value,
       id: v4()
     });
   }

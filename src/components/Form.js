@@ -7,8 +7,9 @@ function Form(props) {
       <form onSubmit={props.formSubmissionHandler}>
         <input type="text" name="name" placeholder="Corn Name" />
         <input type="text" name="origin" placeholder="Origin" />
-        <input type="number" name="price" placeholder="Price per ear" />
-        <input type="number" name="bushels" placeholder="Bushels In Stock" />
+        <input type="number" name="price" step="0.01" placeholder="Price per ear" />
+        <label>Restock?
+        <input type="checkbox" name="restock" value="112" /></label>
         <button type="submit">{props.buttonText}</button>
       </form>
     </div>

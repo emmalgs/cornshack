@@ -48,7 +48,6 @@ class CornControl extends React.Component {
   }
 
   handleCornSale = (id) => {
-    console.log(this.state.cornWallet)
     const selectedCorn = this.state.cornList.filter(corn => corn.id === id);
     if (selectedCorn[0].ears > 0) {
       selectedCorn[0].ears -= 1;
@@ -108,13 +107,17 @@ class CornControl extends React.Component {
     }
 
     let visibleCornFacts = null;
-    if (this.state.cornFact) {
-      visibleCornFacts = <div className="corn-facts"></div>
+    if (!this.state.cornFact) {
+      visibleCornFacts = <div className="corn-facts-btn"></div>
+    } else {
+      let randomIndex = Math.floor(Math.random() * cornFacts.length)
+      visibleCornFacts = <p>{cornFacts[randomIndex]}</p>
     }
 
     return (
       <React.Fragment>
         <Header cornSales={this.state.cornWallet} />
+        <div className="corn-facts" onClick={this.handleCornFacts}>{visibleCornFacts}</div>
         <div className="control">
           {currentlyVisibleSate}
           <button className="nav-btn" onClick={this.handleViewClick}>{buttonText}</button>

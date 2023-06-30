@@ -6,7 +6,7 @@ function CornDetail(props){
   if (props.corn.ears > 0) {
     earInformation = 
     <React.Fragment>
-      Ears available: {props.corn.ears} 
+      Ears available &#8594; {props.corn.ears} 
       <button onClick={() => props.sellCorn(props.corn.id)}>Sell Corn</button>
       </React.Fragment>} else {
       earInformation =
@@ -14,12 +14,12 @@ function CornDetail(props){
     }
   
   return (
-    <div>
+    <div className="corn-details">
       <h1>{props.corn.name}</h1>
       <ul>
-        <li>Origin: {props.corn.origin}</li>
-        <li>Price: ${props.corn.price}</li>
-        <li>{earInformation}</li>
+        <li>Origin &#8594; <em>{props.corn.origin}</em></li>
+        <li>Price &#8594; <strong>${props.corn.price}</strong></li>
+        <li className="ear-info">{earInformation}</li>
       </ul>
       <button onClick={props.onClickingEdit}>Edit</button>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Corn from "./Corn";
 import PropTypes from "prop-types";
 
+
 function CornList(props){
   return (
     <div className="corn-list">

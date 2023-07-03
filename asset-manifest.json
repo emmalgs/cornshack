@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d789318a.css",
+    "main.js": "/static/js/main.e23b4bd1.js",
+    "static/media/cornguy2.gif": "/static/media/cornguy2.ff06cf001799721f5e8b.gif",
+    "static/media/corncob.png": "/static/media/corncob.63ba7161201f8143cc6e.png",
+    "static/media/corncob2.png": "/static/media/corncob2.3d011d312915961ee886.png",
+    "index.html": "/index.html",
+    "main.d789318a.css.map": "/static/css/main.d789318a.css.map",
+    "main.e23b4bd1.js.map": "/static/js/main.e23b4bd1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d789318a.css",
+    "static/js/main.e23b4bd1.js"
+  ]
+}

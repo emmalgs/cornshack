@@ -2,7 +2,7 @@
   "name": "cornshack",
   "version": "0.1.0",
   "repository": {
-    "url": "https://github.com/emmalgs/cornshack.git"
+    "url": "git+https://github.com/emmalgs/cornshack.git"
   },
   "private": true,
   "dependencies": {
